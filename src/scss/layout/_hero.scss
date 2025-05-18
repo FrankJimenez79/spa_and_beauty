@@ -1,0 +1,88 @@
+@use "../abstracts/_variables" as *;
+@use "../abstracts/_mixins" as *;
+
+.hero {
+  display: flex;
+  margin-bottom: 90px;
+
+  &-content {
+    width: 50%;
+    &-title {
+      font-size: 60px;
+      color: $dark-blue;
+      font-weight: 700;
+      line-height: 80px;
+      padding-top: 40px;
+      margin-bottom: 32px;
+    }
+    &-subtitle {
+      color: $dark-gray;
+      font-weight: 400;
+      font-size: 20px;
+      width: 90%;
+      line-height: 40px;
+      margin-bottom: 40px;
+    }
+    .action {
+      display: flex;
+      gap: 40px;
+      align-items: center;
+      .button-blue {
+        @include button();
+      }
+      .video {
+        display: inline-flex;
+        align-items: center;
+        gap: 12px;
+
+        font-size: 16px;
+        color: $dark-blue;
+        text-decoration: none;
+
+        &::before {
+          content: "";
+          display: inline-block;
+          width: 100px; // ⬅️ más grande
+          height: 100px; // ⬅️ más grande
+          background-image: url("../../img/icon-play.svg");
+          background-size: cover; // o `contain` si lo prefieres
+          background-repeat: no-repeat;
+          background-position: center 15px;
+
+          flex-shrink: 0;
+        }
+      }
+    }
+  }
+}
+.testimonies {
+  div {
+    width: 400px;
+    padding: 24px;
+    background-color: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(8px);
+    border-radius: 20px;
+    p.description {
+      color: $black;
+      font-weight: 400;
+      font-size: 14px;
+      margin-bottom: 10px;
+    }
+    p.name {
+      color: $dark-blue;
+      font-weight: 700;
+      font-size: 16px;
+    }
+  }
+  div.box2 {
+    position: absolute;
+    bottom: -120px;
+    right: 179px;
+  }
+  div.box1 {
+    width: 330px;
+    position: absolute;
+    top: 375px;
+    right: 100px;
+  }
+}
